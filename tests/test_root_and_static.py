@@ -8,7 +8,7 @@ def test_root_redirect():
     client = TestClient(app_module.app)
 
     # Act
-    resp = client.get("/", allow_redirects=False)
+    resp = client.get("/", follow_redirects=False)
 
     # Assert
     assert resp.status_code in (307, 302)
